@@ -16,7 +16,7 @@ public class ExampleA {
         // Student 10 - Name: Jack, ID: 1009
 
         //  Create an arraylist of students
-        ArrayList<student> studentList = new ArrayList<>();
+    
 
         //  Add students into studentList
 
