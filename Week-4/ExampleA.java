@@ -20,7 +20,7 @@ public class ExampleA {
 
         //  Add students into studentList
 
-        printStudentList(studentList);
+        printStudentList();
 
         //  Find a student
 
@@ -30,7 +30,7 @@ public class ExampleA {
         //      Remove by Index
         //      Remove by object
 
-        printStudentList(studentList);
+        printStudentList();
     }
 
     public static void printStudentList(ArrayList<student> list){
