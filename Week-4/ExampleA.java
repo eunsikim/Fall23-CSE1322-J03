@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class ExampleA {
     public static void main(String[] args) {
@@ -15,22 +14,44 @@ public class ExampleA {
         // Student 9 - Name: Ivy, ID: 1008
         // Student 10 - Name: Jack, ID: 1009
 
+        String str = "Hello9World9Eun Sik";
+
+        System.out.println(str.split("9")[0]);
+
         //  Create an arraylist of students
-    
+        ArrayList<student> studentList = new ArrayList<>();
 
         //  Add students into studentList
+        studentList.add(new student("Alice", 1000));
 
-        printStudentList();
+        student temp = new student("Bob", 1001);
+        studentList.add(temp);
+
+        temp = new student("Charlie", 1002);
+        studentList.add(2, temp);
+
+
+
+        printStudentList(studentList);
 
         //  Find a student
+        for(student s : studentList){
+            if(s.getName().equalsIgnoreCase("bob")){
+                System.out.println("I found " + s.getName());
+            }
+        }
 
         //  Modify a student
+        studentList.get(1).setName("Eun Sik");
 
         //  Remove a student
         //      Remove by Index
-        //      Remove by object
+        studentList.remove(0);
 
-        printStudentList();
+        //      Remove by object
+        studentList.remove(studentList.get(1));
+
+        printStudentList(studentList);
     }
 
     public static void printStudentList(ArrayList<student> list){
