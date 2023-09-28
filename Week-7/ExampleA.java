@@ -1,3 +1,7 @@
+interface ICanFly{
+    public abstract void fly();
+}
+
 abstract class Animal{
     private String name;
     private boolean alive;
@@ -31,13 +35,17 @@ abstract class Birds extends Animal{
     }  
 }
 
-class Owl extends Birds{
+class Owl extends Birds implements ICanFly{
     public Owl(String name){
         super(name, true);
     }
 
     public void makeNoise(){
-        System.out.println("");
+        System.out.println("hoot");
+    }
+
+    public void fly(){
+        System.out.println("Silent Flutter");
     }
 }
 
@@ -52,16 +60,10 @@ class Penguin extends Birds{
     }
 }
 
-public class ExampleB {
+public class ExampleA {
     public static void main(String[] args) {
-        Birds[] listOfBirds = new Birds[2];
+        Owl owl = new Owl("Athena");
 
-        listOfBirds[0] = new Owl("Athena");
-        listOfBirds[1] = new Penguin("Pingu");
-
-        for(Birds b : listOfBirds){
-            b.makeNoise();
-            System.out.println("my name is " + b.getName() + (b.canFly() ? " and I can fly." : " and I cannot fly."));
-        }
+        owl.fly();
     }
 }
